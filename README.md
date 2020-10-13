@@ -3,13 +3,13 @@
 This documents whatever steps are necessary to get the
 application up and running.
 
-* Ruby 2.6.5 is required
+## Ruby 2.6.5 is required
 
-* System dependencies: Redis 
+## System dependencies: Redis 
 
-* In order to run
-  redis-server (in a separate console)
-  bundle install
-  rake db:migrate
-  rails s
+## In order to run
+  * redis-server (in a separate console)
+  * bundle install
+  * rake db:migrate
+  * rails s
   
