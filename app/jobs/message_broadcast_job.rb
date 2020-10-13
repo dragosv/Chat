@@ -5,7 +5,7 @@ class MessageBroadcastJob < ApplicationJob
     ActionCable.server.broadcast build_room_id(message.room_id),
                                  message: {
                                      content: message.content,
-                                     username: message.user.username
+                                     email: message.user.email
                                  }
   end
 

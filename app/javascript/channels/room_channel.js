@@ -28,7 +28,7 @@ document.addEventListener('turbolinks:load', () => {
           "<div class=\"message-content\">" +
           data.message.content +
           "</div><div class=\"message-user\">" +
-          data.message.username +
+          data.message.email +
           "</div>";
     }
   });

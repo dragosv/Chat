@@ -58,3 +58,5 @@ gem "devise", "~> 4.7"
 gem "redis", "~> 4.2"
 
 gem "faker", "~> 2.14"
+
+gem "clearance", "~> 2.3"
