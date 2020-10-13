@@ -10,6 +10,7 @@ application up and running.
 ## In order to run
   * redis-server (in a separate console)
   * bundle install
+  * yarn
   * rake db:migrate
   * rails s
   
