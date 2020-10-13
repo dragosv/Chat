@@ -5,6 +5,7 @@ class MessageBroadcastJob < ApplicationJob
     ActionCable.server.broadcast build_user_room_id(to.user_id),
                                  from: {
                                      user: from.user_id,
+                                     conversation: message.conversation.id
                                  }
 
     ActionCable.server.broadcast build_conversation_room_id(message.room_id),
