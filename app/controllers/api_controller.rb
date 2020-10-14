@@ -36,8 +36,18 @@ class ApiController < ApplicationController
 
     @message = Message.new(message_params)
 
+    begin
+      user = User.find(@message.user_id)
+    rescue ActiveRecord::RecordNotFound
+      respond_to do |format|
+        format.all { render json: { 'user_id' => 'user does not exists' }, status: :unprocessable_entity }
+      end
+
+      return
+    end
+
     @message.room = room
-    @message.user = current_user
+    @message.user = user
 
     if @message.save
       MessageBroadcastJob.perform_later @message
@@ -55,7 +65,7 @@ class ApiController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:content)
+    params.require(:message).permit(:content, :user_id)
   end
 
   def room_params
