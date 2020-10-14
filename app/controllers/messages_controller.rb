@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  include Clearance::Controller
+
   before_action :require_login
   before_action :set_message, only: [:show, :edit, :update, :destroy]
 

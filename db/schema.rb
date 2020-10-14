@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_10_13_144947) do
 
   create_table "direct_messages", force: :cascade do |t|
     t.integer "conversation_id"
+    t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["conversation_id"], name: "index_direct_messages_on_conversation_id"

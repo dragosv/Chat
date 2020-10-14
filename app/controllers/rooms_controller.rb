@@ -1,4 +1,6 @@
 class RoomsController < ApplicationController
+  include Clearance::Controller
+
   before_action :require_login
   before_action :set_room, only: [:show, :edit, :update, :destroy]
 
